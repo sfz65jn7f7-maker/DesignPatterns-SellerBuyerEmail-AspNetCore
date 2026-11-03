@@ -1,0 +1,62 @@
+@host = https://localhost:7220
+
+POST {{host}}/api/vendeurs
+Content-Type: application/json
+
+{
+  "nom": "Benali",
+  "prenom": "Sara",
+  "email": "sara@mail.com",
+  "nomBoutique": "Chez Sara"
+}
+
+###
+
+POST {{host}}/api/acheteurs
+Content-Type: application/json
+
+{
+  "nom": "Alaoui",
+  "prenom": "Youssef",
+  "email": "youssef@mail.com",
+  "adresseLivraison": "12 rue Hassan II, Oujda"
+}
+
+###
+
+GET {{host}}/api/vendeurs
+
+###
+
+# Doublon : doit renvoyer 409
+POST {{host}}/api/vendeurs
+Content-Type: application/json
+
+{
+  "nom": "Benali",
+  "prenom": "Sara",
+  "email": "sara@mail.com",
+  "nomBoutique": "Chez Sara"
+}
+
+###
+
+# Email invalide : doit renvoyer 400
+POST {{host}}/api/vendeurs
+Content-Type: application/json
+
+{
+  "nom": "Test",
+  "prenom": "Test",
+  "email": "pas-un-email",
+  "nomBoutique": "X"
+}
+
+###
+
+# Inexistant : doit renvoyer 404
+GET {{host}}/api/vendeurs/999
+
+###
+
+GET {{host}}/api/acheteurs

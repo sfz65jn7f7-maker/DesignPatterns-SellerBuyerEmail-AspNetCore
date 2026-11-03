@@ -1,0 +1,47 @@
+# Build
+[Bb]in/
+[Oo]bj/
+[Dd]ebug/
+[Rr]elease/
+x64/
+x86/
+publish/
+
+# Visual Studio
+.vs/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+*.rsuser
+*.vsidx
+*.cache
+
+# Rider / JetBrains
+.idea/
+*.sln.iml
+
+# VS Code
+.vscode/
+
+# Logs et résultats de tests
+*.log
+TestResults/
+[Tt]est[Rr]esult*/
+
+# NuGet
+*.nupkg
+*.snupkg
+.nuget/
+packages/
+
+# Secrets et configuration locale
+appsettings.*.local.json
+secrets.json
+*.pfx
+
+# Fichiers système
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+.DS_Store
